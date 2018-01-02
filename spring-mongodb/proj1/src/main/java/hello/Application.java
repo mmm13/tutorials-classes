@@ -23,6 +23,9 @@ public class Application implements CommandLineRunner {
 		// save a couple of customers
 		repository.save(new Customer("Alice", "Smith"));
 		repository.save(new Customer("Bob", "Smith"));
+		repository.save(new Customer("Jana","Eloise","Smith"));
+		repository.save(new Customer("Clara","Eloise","Jones"));
+		repository.save(new Customer("Cindy","Jane","Conner"));
 
 		// fetch all customers
 		System.out.println("Customers found with findAll():");
@@ -43,6 +46,12 @@ public class Application implements CommandLineRunner {
 			System.out.println(customer);
 		}
 
+		System.out.println("Customers found with findByMiddleName('Eloise'):");
+		System.out.println("--------------------------------");
+		for (Customer customer : repository.findByMiddleName("Eloise")) {
+			System.out.println(customer);
+		}
+		
 	}
 
 }

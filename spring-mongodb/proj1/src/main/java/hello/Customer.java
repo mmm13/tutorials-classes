@@ -9,6 +9,7 @@ public class Customer {
     public String id;
 
     public String firstName;
+    public String middleName;
     public String lastName;
 
     public Customer() {}
@@ -18,12 +19,16 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public Customer(String firstName, String middleName, String lastName) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+    }
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+                "Customer[id=%s, firstName='%s' middleName='%s' lastName='%s']",
+                id, firstName, middleName, lastName);
     }
 
 }
-
