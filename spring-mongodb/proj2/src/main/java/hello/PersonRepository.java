@@ -10,6 +10,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface PersonRepository extends MongoRepository<Person, String> {
 
 	List<Person> findByLastName(@Param("name") String name);
-	
+	List<Person> findByMiddleName(@Param("name") String name);
 
 }
